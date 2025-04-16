@@ -36,6 +36,11 @@ jobs:
         working-directory: frontend
         run: npm run build
 
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
       - name: Docker Build and Push
         run: |
           docker-compose build
