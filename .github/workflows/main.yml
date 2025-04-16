@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # or master, depending on your default branch name
+      - main
 
 jobs:
   deploy:
@@ -12,14 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # If you have any build steps, add them here
-      # For example:
-      # - name: Build site
-      #   run: your-build-command-here
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # The branch the action should deploy to
-          folder: .         # Deploy the entire repository (or specify the folder containing your site)
-          clean: true       # Automatically remove deleted files from the deployment
+          branch: gh-pages
+          folder: .
+          clean: true
